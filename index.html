@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+color:Blue
+
+        }
+
+        #quote-container {
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #new-quote-btn {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body style ="color:black">
+    <div id="quote-container"></div>
+    <button id="new-quote-btn">New Quote</button>
+
+    <script>
+        const quotes = [
+            "The only way to do great work is to love what you do. - Steve Jobs",
+            "In the middle of difficulty lies opportunity. - Albert Einstein",
+            "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+            "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+            "Strive not to be a success, but rather to be of value. - Albert Einstein",
+            "Don't watch the clock; do what it does. Keep going. - Sam Levenson",
+            "It always seems impossible until it's done. - Nelson Mandela",
+            "Believe you can and you're halfway there. -Theodore Roosevelt"
+        ];
+
+        const quoteContainer = document.getElementById('quote-container');
+        const newQuoteBtn = document.getElementById('new-quote-btn');
+
+        function getRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            return quotes[randomIndex];
+        }
+
+        function displayRandomQuote() {
+            const randomQuote = getRandomQuote();
+            quoteContainer.innerHTML = `<p>${randomQuote}</p>`;
+        }
+
+        newQuoteBtn.addEventListener('click', displayRandomQuote);
+
+        // Display an initial quote when the page loads
+        displayRandomQuote();
+    </script>
+</body>
+</html>
